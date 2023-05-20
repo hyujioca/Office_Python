@@ -7,7 +7,7 @@ subtitle = slide.placeholders[1]
 
 title.text = "Hey guys!"
 
-text_runs = []
+text_runs = 0
 
 for slide in prs.slides:
     for shape in slide.shapes:
@@ -15,6 +15,6 @@ for slide in prs.slides:
             continue
         for paragraph in shape.text_frame.paragraphs:
             for run in paragraph.runs:
-                text_runs.append(run.text)
+                text_runs += 1
 subtitle.text = "文字数: {}".format(text_runs)
 prs.save("test2.pptx")
