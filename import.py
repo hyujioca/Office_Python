@@ -1,9 +1,8 @@
 from docx import Document
-document = Document()
-f = open('samle.docx', 'r')
-lines = f.readlines()
-for c in lines:
-    print(len(c))
-f.close
+document = Document("sample.docx")
+total_characters = 0
+for paragraph in document.paragraphs:
+    total_characters += len(paragraph.text)
+print(total_characters)
 document.add_picture("download.jpg")
 document.save('sample_answer.docx')
